@@ -1,0 +1,38 @@
+// Table cell coloring
+.table tbody tr td {
+  &.danger,
+  &.danger:hover {
+    background-color: $brand-danger;
+  }
+  &.success,
+  &.success:hover {
+    background-color: $brand-success;
+  }
+  &.warning,
+  &.warning:hover {
+    background-color: $brand-warning;
+  }
+  &.info,
+  &.info:hover {
+    background-color: $brand-info;
+  }
+}
+// Table cell button fix
+td.btn {
+  display: table-cell;
+}
+// Editable table
+.table-centered {
+  td {
+    vertical-align: middle !important;
+  }
+}
+// Sortable table styling
+tr {
+  &.as-sortable-item {
+    display: table-row;
+  }
+  &.as-sortable-placeholder {
+    display: table-row !important;
+  }
+}

@@ -1,0 +1,24 @@
+h3 Select a directory
+.panel.panel-default
+  .panel-body
+    button.btn.btn-success.btn-block.margin-20-0(
+      ng-click='directory.select()'
+      )
+      | Select a directory
+    h5.text-center.padding-10-0
+      span(
+        ng-hide='directory.selected'
+        )
+        | No Project Directory Selected
+      span(
+        ng-show='directory.selected'
+        )
+        | Currently selected:
+        span.text-muted.padding-left-10
+          | {{directory.selected}}
+    button.btn.btn-success.btn-block.margin-20-0(
+      ui-sref='workspace.project.product'
+      ng-show='directory.selected'
+      )
+      | Select a product
+      span.fa.fa-share.padding-left-10

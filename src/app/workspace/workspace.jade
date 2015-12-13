@@ -1,0 +1,44 @@
+.container-fluid.no-select
+  .row
+    .col-md-4
+      .sidebar-nav
+        .navbar.navbar-default(role='navigation')
+          ul.nav.navbar-nav
+            li.text-center
+              h3.margin-20-0
+                img.navbar-logo(src='images/logo.svg')
+                span Electron App Base
+            li(ui-sref-active='active')
+              a(ui-sref='workspace.project') Project
+              ul.nav.navbar-nav.subnav(
+                uib-collapse="!workspace.$state.includes('workspace.project')"
+                )
+                li(
+                  ng-show='workspace.productSelected'
+                  )
+                  a(
+                    ui-sref='product'
+                    )
+                    | View
+                    span.fa.fa-share.text-success.padding-left-10
+                li
+                  a(
+                    ui-sref='workspace.project.directory'
+                    ui-sref-active='active'
+                    )
+                    | Directory
+                li(
+                  uib-collapse='!workspace.directorySelected'
+                  )
+                  a(
+                    ui-sref='workspace.project.product'
+                    ui-sref-active='active'
+                    )
+                    | Product
+            li(ui-sref-active='active')
+              a(ui-sref='workspace.about') About
+            li(ui-sref-active='active')
+              a(ui-sref='workspace.help') Help
+
+    .col-md-8
+      ui-view

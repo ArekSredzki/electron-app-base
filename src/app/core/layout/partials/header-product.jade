@@ -1,0 +1,40 @@
+.header.no-select
+  .navbar.navbar-default(role='navigation')
+    .container-fluid
+      .navbar-header
+        button.navbar-toggle.collapsed(
+          type='button',
+          data-toggle='collapse',
+          data-target='#js-navbar-collapse'
+          )
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.pull-left(ui-sref='workspace.project')
+          img.navbar-logo(src='images/logo.svg')
+        a.navbar-brand(ui-sref='workspace.project') Electron App Base
+      #js-navbar-collapse.collapse.navbar-collapse
+        ul.nav.navbar-nav
+          li(ui-sref-active='active')
+            a(ui-sref='product.main') Main
+        span.float-right
+          button.btn.btn-warning.navbar-btn(
+            ng-click='header.reloadDatabase()',
+            type='button'
+            )
+            span.fa.fa-fw.fa-refresh
+            |  Refresh
+          button.btn.btn-danger.navbar-btn(
+            ng-click='header.reloadDatabase(true)',
+            type='button',
+            confirm='Are you sure that you want to revert any changes you have made?'
+            )
+            span.fa.fa-fw.fa-remove
+            |  Reset
+          button.btn.btn-success.navbar-btn(
+            ng-click='header.saveDatabase()',
+            type='button'
+            )
+            span.fa.fa-fw.fa-check
+            |  Save

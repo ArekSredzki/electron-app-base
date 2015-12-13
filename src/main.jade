@@ -1,0 +1,91 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title Electron App Base
+    meta(name='description', content='A base project for creating interactive desktop application with Electron.')
+    meta(name='viewport', content='width=device-width')
+    // build:css(.) styles/vendor.css
+    // bower:css
+    link(rel='stylesheet', href='../bower_components/angular-ui-notification/dist/angular-ui-notification.css')
+    link(rel='stylesheet', href='../bower_components/ng-sortable/dist/ng-sortable.css')
+    // endbower
+    // endbuild
+    // build:css(.tmp) styles/main.css
+    link(rel='stylesheet', href='styles/main.css')
+    // endbuild
+    // 
+  body(ng-app='app')
+    div
+      div(ui-view='loader')
+      div(ui-view='header')
+      div(ui-view='contentLayout')
+      div(ui-view='footer')
+    
+    // build:js(.) scripts/vendor.js
+    // bower:js
+    script(src='../bower_components/angular/angular.js')
+    script(src='../bower_components/jquery/dist/jquery.js')
+    script(src='../bower_components/angular-animate/angular-animate.js')
+    script(src='../bower_components/angular-sanitize/angular-sanitize.js')
+    script(src='../bower_components/angular-xeditable/dist/js/xeditable.min.js')
+    script(src='../bower_components/lodash/dist/lodash.min.js')
+    script(src='../bower_components/angular-ui-notification/dist/angular-ui-notification.js')
+    script(src='../bower_components/angular-bootstrap/ui-bootstrap-tpls.js')
+    script(src='../bower_components/angular-confirm-modal/angular-confirm.js')
+    script(src='../bower_components/highcharts-ng/dist/highcharts-ng.js')
+    script(src='../bower_components/angular-PubSub/src/angular-pubsub.js')
+    script(src='../bower_components/angularUtils-pagination/dirPagination.js')
+    script(src='../bower_components/angular-ui-router/release/angular-ui-router.js')
+    script(src='../bower_components/angular-permission/dist/angular-permission.js')
+    script(src='../bower_components/angular-permission/dist/angular-permission-ui.js')
+    script(src='../bower_components/angular-permission/dist/angular-permission-ng.js')
+    script(src='../bower_components/ngstorage/ngStorage.js')
+    script(src='../bower_components/angular-cache/dist/angular-cache.js')
+    script(src='../bower_components/ng-sortable/dist/ng-sortable.js')
+    script(src='../bower_components/moment/moment.js')
+    // endbower
+    // endbuild
+    
+    // build:js({.tmp,app}) app/app.js
+    
+    //- Inject our source files
+    // angular
+    script(src='app/workspace/workspace.module.js' type='text/javascript')
+    script(src='app/workspace/workspace.controller.js' type='text/javascript')
+    script(src='app/workspace/project/project.module.js' type='text/javascript')
+    script(src='app/workspace/project/product/product.controller.js' type='text/javascript')
+    script(src='app/workspace/project/directory/directory.controller.js' type='text/javascript')
+    script(src='app/workspace/help/help.module.js' type='text/javascript')
+    script(src='app/workspace/about/about.module.js' type='text/javascript')
+    script(src='app/workspace/about/about.controller.js' type='text/javascript')
+    script(src='app/product/product.module.js' type='text/javascript')
+    script(src='app/product/main/main.module.js' type='text/javascript')
+    script(src='app/product/main/table/main-table.controller.js' type='text/javascript')
+    script(src='app/core/vendor/angular-moment.js' type='text/javascript')
+    script(src='app/core/services/services.module.js' type='text/javascript')
+    script(src='app/core/services/utils.service.js' type='text/javascript')
+    script(src='app/core/services/ipc.service.js' type='text/javascript')
+    script(src='app/core/services/data.service.js' type='text/javascript')
+    script(src='app/core/services/app.service.js' type='text/javascript')
+    script(src='app/core/layout/layout.module.js' type='text/javascript')
+    script(src='app/core/layout/loader.controller.js' type='text/javascript')
+    script(src='app/core/layout/header.controller.js' type='text/javascript')
+    script(src='app/core/layout/footer.controller.js' type='text/javascript')
+    script(src='app/core/filters/filters.module.js' type='text/javascript')
+    script(src='app/core/filters/order-by-value.filter.js' type='text/javascript')
+    script(src='app/core/directives/directives.module.js' type='text/javascript')
+    script(src='app/core/directives/td-sort-header.js' type='text/javascript')
+    script(src='app/core/directives/input-directives.js' type='text/javascript')
+    script(src='app/core/dependencies/dependencies.js' type='text/javascript')
+    script(src='app/core/core.module.js' type='text/javascript')
+    script(src='app/core/constants/constants.js' type='text/javascript')
+    script(src='app/core/auth/auth.module.js' type='text/javascript')
+    script(src='app/app.module.js' type='text/javascript')
+    // endangular
+    
+    //- This file is generated as part of the build process.
+    //- It contains all of the partials so that no additional HTML files have to
+    //- has to be loaded.
+    script(src='app/app.templates.js' type='text/javascript')
+    // endbuild

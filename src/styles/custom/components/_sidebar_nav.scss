@@ -1,0 +1,41 @@
+.sidebar-nav {
+  .navbar-logo {
+    padding: 0 10px 0 0;
+    margin: -10px 0 0 -20px;
+    height: 32px;
+  }
+  .navbar {
+    padding: 0;
+    max-height: none;
+    ul {
+      float: none;
+      &:not {
+        display: block;
+      }
+    }
+    li {
+      float: none;
+      display: block;
+      overflow: hidden;
+      a {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        -webkit-transition: background-color 100ms ease-in-out;
+        transition: background-color 100ms ease-in-out;
+      }
+    }
+  }
+  .subnav {
+    a {
+      padding-left: 25px;
+      &,
+      &:focus,
+      &:hover {
+        background-color: darken($navbar-default-link-active-bg, 3%) !important;
+        &.active {
+          background-color: darken($navbar-default-link-active-bg, 7%) !important;
+        }
+      }
+    }
+  }
+}

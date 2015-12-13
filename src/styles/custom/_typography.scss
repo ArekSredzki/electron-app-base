@@ -1,0 +1,15 @@
+// Text Colors
+.text-gray {
+  color: $gray;
+}
+.text-gray-light {
+  color: $gray-light;
+}
+// Decoration overriding
+.deco-none, .deco-none:link, .deco-none:hover {
+  color: inherit;
+  text-decoration: none !important;
+}
+.no-select {
+  -webkit-user-select: none;
+}

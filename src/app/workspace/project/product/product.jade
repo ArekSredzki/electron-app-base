@@ -1,0 +1,45 @@
+h3 Select a product
+.jumbotron(
+  ng-show='product.selected'
+  )
+  .row
+    .col-md-6.text-right
+      h4
+        a.deco-none.pointer(
+          ui-sref='product'
+          )
+          | {{product.selected}}
+  .row
+    .col-md-6.text-right
+      a.deco-none.pointer(
+        ui-sref='product'
+        )
+        span.text-success
+          span.fa.fa-check
+          span.padding-left-5 Click to view
+    .col-md-6
+      span.text-danger.pointer.text-left(
+        ng-click='product.unload()'
+        )
+        span.fa.fa-times
+        span.padding-left-5 Close
+.panel.panel-default
+  .panel-body
+    ul.nav.nav-pills.nav-stacked.text-right
+      li(ng-repeat='productName in product.availableNames')
+        a
+          .row.pointer(
+            ng-click='product.select(productName)'
+            )
+            .col-md-6
+              h4
+                | {{productName}}
+            .col-md-6.padding-top-10.text-success.text-left
+              span.fa.fa-share
+              span.padding-left-5 Click to open
+        li(ng-hide='product.availableNames.length')
+          a
+            .row
+              .col-md-6
+                h4
+                  | No Products Available

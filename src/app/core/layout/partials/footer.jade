@@ -1,0 +1,31 @@
+.footer.navbar-fixed-bottom.no-select
+  .container-fluid
+    i.fa.fa-fw.fa-code
+    |  with 
+    i.fa.fa-fw.fa-heart
+    |  by Arek Sredzki
+    span.pull-right
+      span.padding-0-5(
+        ng-show='footer.loadingStatusText'
+        )
+        | {{footer.loadingStatusText}}
+        span.padding-left-5
+          i.fa.fa-fw.fa-spin.fa-circle-o-notch
+      a.padding-0-5(
+        ui-sref='workspace.project.directory'
+        )
+        span.fa.fa-fw.fa-folder.padding-right-5
+        | {{footer.selectedDirectory}}
+      a.padding-0-5(
+        ui-sref='workspace.project.product'
+        )
+        span(
+          ng-show='footer.selectedProduct'
+          )
+          i.fa.fa-fw.fa-database.padding-right-5
+          | {{footer.selectedProduct}}
+        span(
+          ng-hide='footer.selectedProduct'
+          )
+          i.fa.fa-fw.fa-cogs.padding-right-5
+          | Select a Product

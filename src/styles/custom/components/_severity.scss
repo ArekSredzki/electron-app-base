@@ -1,0 +1,49 @@
+/* Severity Markers */
+.severity-row {
+  color: $white;
+  font-size: 15px;
+  margin-right: 0;
+  margin-left: 0;
+}
+.severity-marker {
+  padding: 5px 10px;
+}
+.severity-title {
+  padding: 5px 10px 4px;
+  border-bottom: 1px solid $gray;
+}
+.severity-btn {
+  height: 30px;
+  margin: -9px 0 -5px;
+  border-width: 0;
+}
+.severity-danger {
+  .severity-marker {
+    background-color: $brand-danger;
+    border-color: $brand-danger;
+  }
+  .severity-title-colored {
+    color: lighten($brand-danger, 30);
+    border-color: $brand-danger;
+  }
+}
+.severity-warning {
+  .severity-marker {
+    background-color: $brand-warning;
+    border-color: $brand-warning;
+  }
+  .severity-title-colored {
+    color: lighten($brand-warning, 30);
+    border-color: $brand-warning;
+  }
+}
+.severity-success {
+  .severity-marker {
+    background-color: $brand-success;
+    border-color: $brand-success;
+  }
+  .severity-title-colored {
+    color: lighten($brand-success, 30);
+    border-color: $brand-success;
+  }
+}

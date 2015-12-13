@@ -1,0 +1,130 @@
+/* Input label position */
+.form-horizontal .control-label {
+  padding-top: 0;
+}
+/* Input status colours */
+.form-control,
+input,
+textarea {
+  border-style: solid;
+  resize: vertical;
+}
+.has-success {
+  .form-control,
+  .form-control:focus {
+    border-color: $brand-success;
+    color: $brand-success;
+  }
+}
+.is-warning {
+  color: $brand-warning;
+}
+.has-warning {
+  .form-control,
+  .form-control:focus {
+    border-color: $brand-warning;
+    color: $brand-warning;
+  }
+}
+.has-error {
+  .form-control,
+  .form-control:focus {
+    border-color: $brand-danger;
+    color: $brand-danger;
+  }
+}
+.editable-wrap {
+  display: inline-block;
+  white-space: nowrap;
+  margin: 0;
+  width: 100%;
+  .editable-controls,
+  .editable-error {
+    margin-bottom: 4px;
+  }
+  .editable-controls {
+    & > input,
+    & > select,
+    & > textarea {
+      margin-bottom: 0;
+    }
+  }
+  .editable-input {
+    display: inline-block;
+  }
+}
+.editable-buttons {
+  display: inline-block;
+  vertical-align: top;
+  button {
+    margin-left: 5px;
+  }
+}
+.editable-input.editable-has-buttons {
+  width: auto;
+}
+.editable-bstime {
+  .editable-input input[type=text] {
+    width: 46px;
+  }
+  .well-small {
+    margin-bottom: 0;
+    padding: 10px;
+  }
+}
+.editable-range output {
+  display: inline-block;
+  min-width: 30px;
+  vertical-align: top;
+  text-align: center;
+}
+.editable-color input[type=color] {
+  width: 50px;
+}
+.editable-checkbox label span,
+.editable-checklist label span,
+.editable-radiolist label span {
+  margin-left: 7px;
+  margin-right: 10px;
+}
+.editable-hide {
+  display: none !important;
+}
+.editable-click,
+a.editable-click {
+  text-decoration: none;
+  color: $brand-info;
+  border-bottom: dashed 1px $brand-info;
+}
+.editable-click:hover,
+a.editable-click:hover {
+  text-decoration: none;
+  color: darken($brand-info, 15);
+  border-bottom-color: darken($brand-info, 15);
+}
+.editable-empty,
+.editable-empty:focus,
+.editable-empty:hover,
+.empty-cell,
+a.editable-empty,
+a.editable-empty:focus,
+a.editable-empty:hover {
+  font-style: italic;
+  color: $brand-danger;
+  text-decoration: none;
+}
+input[type="number"].ng-valid {
+  color: green;
+  border-color: green;
+}
+input[type="number"].ng-invalid {
+  color: red;
+  border-color: red;
+}
+/* Fix radio & checkbox input positioning */
+.checkbox input[type="checkbox"],
+.checkbox-inline input[type="checkbox"],
+.radio input[type="radio"],
+.radio-inline input[type="radio"] {
+  margin-left: 0;
+}

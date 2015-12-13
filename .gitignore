@@ -1,0 +1,9 @@
+/app/out
+/coverage
+node_modules
+bower_components
+/dist
+/.tmp
+/.sass-cache
+.DS_Store
+npm-debug.log

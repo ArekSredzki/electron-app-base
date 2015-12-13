@@ -1,0 +1,52 @@
+.row.no-select
+  .col-md-2
+    h3.product-page-header Data
+  .col-md-2.form-inline.h-controls
+    .form-group
+      input.form-control.input-sm(
+        type='number'
+        min='1'
+        max='100'
+        ng-model='vm.$storage.pageSize'
+        ng-change='vm.$storage.pageSize = vm.$storage.pageSize || 15'
+        )
+      |  Per Page
+  .col-md-3.form-inline.h-controls
+    .form-group
+      | Search: 
+      input.form-control.input-sm(
+        placeholder='Search',
+        ng-model='vm.search.$'
+        )
+.row
+  .col-md-12
+    h4.text-center.text-gray.no-select.padding-50-0(
+      ng-hide='vm.data.length'
+      )
+      | No data available.
+    table.table.table-bordered.table-hover.table-condensed.table-centered.text-center.ng-cloak(
+      ng-show='vm.data.length'
+      )
+      thead.no-select
+        tr(style='font-weight: bold')
+          td(
+            td-sort-header
+            sort-options='vm.sortOptions'
+            key="'name'"
+            )
+            | Name
+      tbody
+        tr(
+          dir-paginate="datum in vm.data | filter: vm.search | orderByValue: vm.sortOptions | itemsPerPage: vm.$storage.pageSize : 'datumPagination' track by datum.$loki"
+          current-page='vm.currentPage'
+          pagination-id='datumPagination'
+          )
+          td.text-left {{ datum.name }}
+.row
+  .col-md-12(
+    ng-show='vm.data.length'
+    )
+    dir-pagination-controls(
+      boundary-links='true'
+      pagination-id='datumPagination'
+      )

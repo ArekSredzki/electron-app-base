@@ -1,0 +1,95 @@
+h3 About
+.panel.panel-default.margin-20-0.text-center
+  .panel-heading
+    h3 Electron App Base
+    h5.text-muted(ng-bind='vm.updateStatus.currentVersion')
+  .panel-body(
+    ng-switch='vm.updateStatus.state'
+    )
+    h5(
+      ng-switch-when='idle'
+      )
+      i.fa.fa-check.text-info
+      span.padding-left-10 Idle.
+      span.padding-left-10
+        button.btn.btn-default(
+          ng-click='vm.checkForUpdates()'
+          ) Check for updates
+    h5(
+      ng-switch-when='checking'
+      )
+      i.fa.fa-spin.fa-circle-o-notch.text-info
+      span.padding-left-10 Checking for updates.
+    h5(
+      ng-switch-when='downloading'
+      )
+      i.fa.fa-spin.fa-circle-o-notch.text-success
+      span.padding-left-10 Downloading update.
+    h5(
+      ng-switch-when='update-available'
+      )
+      i.fa.fa-level-up.text-success
+      span.padding-left-10 New Version Available: 
+      span.padding-left-10.text-success(ng-bind='vm.updateStatus.updateVersion')
+      span.padding-left-10
+        button.btn.btn-success(
+          ng-click='vm.installUpdate()'
+          ) Restart and Install
+    h5(
+      ng-switch-when='no-update-available'
+      )
+      i.fa.fa-check.text-success
+      span.padding-left-10 Up to date.
+      span.padding-left-10
+        button.btn.btn-default(
+          ng-click='vm.checkForUpdates()'
+          ) Check for updates
+    h5(
+      ng-switch-when='unsupported'
+      )
+      i.fa.fa-cross.text-warning
+      span.padding-left-10 Your platform does not support automatic updates.
+      span.padding-left-10(
+        ng-hide='vm.isDebug'
+        )
+        button.btn.btn-info(
+          ng-click='vm.checkForUpdates()'
+          ) Check for updates manually
+      span.padding-left-10.text-warning(
+        ng-show='vm.isDebug'
+        ) Not supported in debug mode.
+    h5(
+      ng-switch-when='error'
+      )
+      i.fa.fa-times.text-danger
+      span.padding-left-10 An Error Occurred: 
+      span.padding-left-10.text-danger(ng-bind='vm.updateStatus.errorMessage')
+      span.padding-left-10
+        button.btn.btn-default(
+          ng-click='vm.checkForUpdates()'
+          ) Check for updates
+    span.text-muted(
+      ng-if='vm.updateStatus.timestamp'
+      )
+      | Last update: 
+      span(am-time-ago='vm.updateStatus.timestamp')
+span.text-muted.pull-right(
+  ng-if='vm.updateStatus.channel'
+  )
+  span(
+    ng-show='vm.updateStatus.channelChanged'
+    )
+    a.deco-none(
+      uib-tooltip='This release channel will not become active until restart.'
+      tooltip-popup-close-delay='1000'
+      )
+      i.fa.fa-warning.text-warning
+    |  
+  | Release channel: 
+  a(
+    href="#"
+    editable-select="vm.updateStatus.channel"
+    e-ng-options="o for o in vm.availableChannels"
+    onbeforesave="vm.selectChannel($data)"
+    )
+    | {{ vm.updateStatus.channel }}
