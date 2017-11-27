@@ -1,5 +1,7 @@
 # Electron App Base
-A base project for creating interactive desktop application with [Electron](https://electron.atom.io/).
+[![GitHub stars](https://img.shields.io/github/stars/ArekSredzki/electron-app-base.svg)](https://github.com/ArekSredzki/electron-app-base/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/ArekSredzki/electron-app-base.svg)](https://github.com/ArekSredzki/electron-app-base/network)
+> A base project for creating interactive desktop application with [Electron](https://electron.atom.io/).
 
 ## Basic Usage:
 Add basic usage data for your application here.
