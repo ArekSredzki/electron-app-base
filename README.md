@@ -14,7 +14,7 @@ If you do not already have a release server, consider using [electron-release-se
 
 Ensure that you have installed Node.js on your development machine.
 
-**Note:** Node.js version `>= 6.x.x` is required.
+**Note:** Node.js version `>= 8.x.x` is required.
 
 ```shell
 npm install
